@@ -13,7 +13,7 @@ module TableOfContents
       output = ''
 
       if tree.heading
-        output+= indentation + %{<a href="#{tree.heading.href}">#{tree.heading.title}</a>\n}
+        output+= indentation + %{<a class="toc-link" href="#{tree.heading.href}">#{tree.heading.title}</a>\n}
       end
 
       if tree.children.any?
