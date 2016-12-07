@@ -8,5 +8,6 @@ Gem::Specification.new do |s|
   s.files       = ['lib/table_of_contents.rb']
 
   s.add_dependency 'nokogiri'
+  s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec'
 end
