@@ -17,6 +17,7 @@ module TableOfContents
     end
 
   private
+
     def move_to_depth(depth)
       if depth > @pointer.depth
         @pointer = @pointer.children.last

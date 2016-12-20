@@ -6,15 +6,15 @@ describe TableOfContents::HeadingTreeRenderer, '#html' do
       heading: nil,
       children: [
         TableOfContents::HeadingTree.new(
-          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: {'id' => 'apples'}),
+          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: { 'id' => 'apples' }),
           children: [
             TableOfContents::HeadingTree.new(
-              heading: TableOfContents::Heading.new(element_name: 'h2', text: 'Apple recipes', attributes: {'id' => 'apple-recipes'})
+              heading: TableOfContents::Heading.new(element_name: 'h2', text: 'Apple recipes', attributes: { 'id' => 'apple-recipes' })
             )
           ]
         ),
         TableOfContents::HeadingTree.new(
-          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Oranges', attributes: {'id' => 'oranges'}),
+          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Oranges', attributes: { 'id' => 'oranges' }),
         )
       ]
     )

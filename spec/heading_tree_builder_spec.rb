@@ -3,27 +3,27 @@ require 'spec_helper'
 describe TableOfContents::HeadingTreeBuilder do
   it 'creates a tree of headings depending on their size' do
     headings = [
-      TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: {'id' => 'apples'}),
-      TableOfContents::Heading.new(element_name: 'h3', text: 'Apple recipes', attributes: {'id' => 'apple-recipes'}),
-      TableOfContents::Heading.new(element_name: 'h1', text: 'Oranges', attributes: {'id' => 'oranges'})
+      TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: { 'id' => 'apples' }),
+      TableOfContents::Heading.new(element_name: 'h3', text: 'Apple recipes', attributes: { 'id' => 'apple-recipes' }),
+      TableOfContents::Heading.new(element_name: 'h1', text: 'Oranges', attributes: { 'id' => 'oranges' })
     ]
 
     expected_tree = TableOfContents::HeadingTree.new(
       children: [
         TableOfContents::HeadingTree.new(
-          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: {'id' => 'apples'}),
+          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: { 'id' => 'apples' }),
           children: [
             TableOfContents::HeadingTree.new(
               children: [
                 TableOfContents::HeadingTree.new(
-                  heading: TableOfContents::Heading.new(element_name: 'h3', text: 'Apple recipes', attributes: {'id' => 'apple-recipes'})
+                  heading: TableOfContents::Heading.new(element_name: 'h3', text: 'Apple recipes', attributes: { 'id' => 'apple-recipes' })
                 )
               ]
             )
           ]
         ),
         TableOfContents::HeadingTree.new(
-          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Oranges', attributes: {'id' => 'oranges'}),
+          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Oranges', attributes: { 'id' => 'oranges' }),
         )
       ]
     )

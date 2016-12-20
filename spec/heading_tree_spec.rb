@@ -5,10 +5,10 @@ describe TableOfContents::HeadingTree, '#==' do
     a = TableOfContents::HeadingTree.new(
       children: [
         TableOfContents::HeadingTree.new(
-          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: {'id' => 'apples'}),
+          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: { 'id' => 'apples' }),
           children: [
             TableOfContents::HeadingTree.new(
-              heading: TableOfContents::Heading.new(element_name: 'h2', text: 'Seeds', attributes: {'id' => 'seeds'}),
+              heading: TableOfContents::Heading.new(element_name: 'h2', text: 'Seeds', attributes: { 'id' => 'seeds' }),
             )
           ]
         )
@@ -17,10 +17,10 @@ describe TableOfContents::HeadingTree, '#==' do
     b = TableOfContents::HeadingTree.new(
       children: [
         TableOfContents::HeadingTree.new(
-          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: {'id' => 'apples'}),
+          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: { 'id' => 'apples' }),
           children: [
             TableOfContents::HeadingTree.new(
-              heading: TableOfContents::Heading.new(element_name: 'h2', text: 'Seeds', attributes: {'id' => 'seeds'}),
+              heading: TableOfContents::Heading.new(element_name: 'h2', text: 'Seeds', attributes: { 'id' => 'seeds' }),
             )
           ]
         )
@@ -34,17 +34,17 @@ describe TableOfContents::HeadingTree, '#==' do
     a = TableOfContents::HeadingTree.new(
       children: [
         TableOfContents::HeadingTree.new(
-          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: {'id' => 'apples'}),
+          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: { 'id' => 'apples' }),
         ),
         TableOfContents::HeadingTree.new(
-          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Oranges', attributes: {'id' => 'oranges'}),
+          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Oranges', attributes: { 'id' => 'oranges' }),
         )
       ]
     )
     b = TableOfContents::HeadingTree.new(
       children: [
         TableOfContents::HeadingTree.new(
-          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: {'id' => 'apples'}),
+          heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: { 'id' => 'apples' }),
         )
       ]
     )
@@ -54,10 +54,10 @@ describe TableOfContents::HeadingTree, '#==' do
 
   it 'is false if a heading differs' do
     a = TableOfContents::HeadingTree.new(
-      heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: {'id' => 'apples'}),
+      heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: { 'id' => 'apples' }),
     )
     b = TableOfContents::HeadingTree.new(
-      heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Oranges', attributes: {'id' => 'oranges'}),
+      heading: TableOfContents::Heading.new(element_name: 'h1', text: 'Oranges', attributes: { 'id' => 'oranges' }),
     )
 
     expect(a).to_not eq(b)

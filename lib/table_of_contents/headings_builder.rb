@@ -17,6 +17,7 @@ module TableOfContents
     end
 
   private
+
     def page
       @_page ||= Nokogiri::HTML(@html)
     end
@@ -27,7 +28,7 @@ module TableOfContents
 
     def convert_nokogiri_attr_objects_to_hashes(attributes)
       attributes.tap do |hash|
-        hash.each do |k,v|
+        hash.each do |k, v|
           hash[k] = v.value
         end
       end
