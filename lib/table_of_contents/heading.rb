@@ -20,8 +20,8 @@ module TableOfContents
 
     def ==(other)
       @element_name == other.instance_variable_get("@element_name") &&
-      @text == other.instance_variable_get("@text") &&
-      @attributes == other.instance_variable_get("@attributes")
+        @text == other.instance_variable_get("@text") &&
+        @attributes == other.instance_variable_get("@attributes")
     end
   end
 end

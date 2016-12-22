@@ -9,23 +9,24 @@ module TableOfContents
     end
 
   private
+
     def render_tree(tree, indentation = '')
       output = ''
 
       if tree.heading
-        output+= indentation + %{<a href="#{tree.heading.href}">#{tree.heading.title}</a>\n}
+        output += indentation + %{<a href="#{tree.heading.href}">#{tree.heading.title}</a>\n}
       end
 
       if tree.children.any?
-        output+= indentation + "<ul>\n"
+        output += indentation + "<ul>\n"
 
         tree.children.each do |child|
-          output+= indentation + indentation_increment + "<li>\n"
-          output+= render_tree(child, indentation + indentation_increment * 2)
-          output+= indentation + indentation_increment + "</li>\n"
+          output += indentation + indentation_increment + "<li>\n"
+          output += render_tree(child, indentation + indentation_increment * 2)
+          output += indentation + indentation_increment + "</li>\n"
         end
 
-        output+= indentation + "</ul>\n"
+        output += indentation + "</ul>\n"
       end
 
       output

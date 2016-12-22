@@ -13,9 +13,9 @@ describe TableOfContents::HeadingsBuilder do
     headings = described_class.new(html).headings
 
     expect(headings).to eq([
-      TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: {'id' => 'apples'}),
-      TableOfContents::Heading.new(element_name: 'h2', text: 'Apple recipes', attributes: {'id' => 'apple-recipes'}),
-      TableOfContents::Heading.new(element_name: 'h1', text: 'Pears', attributes: {'id' => 'pears'}),
+      TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: { 'id' => 'apples' }),
+      TableOfContents::Heading.new(element_name: 'h2', text: 'Apple recipes', attributes: { 'id' => 'apple-recipes' }),
+      TableOfContents::Heading.new(element_name: 'h1', text: 'Pears', attributes: { 'id' => 'pears' }),
     ])
   end
 end

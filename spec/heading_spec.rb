@@ -10,7 +10,7 @@ end
 
 describe TableOfContents::Heading, '#href' do
   it 'returns a fragment href' do
-    heading = described_class.new(element_name: '', text: '', attributes: {'id' => 'apple-recipes'})
+    heading = described_class.new(element_name: '', text: '', attributes: { 'id' => 'apple-recipes' })
 
     expect(heading.href).to eq('#apple-recipes')
   end
@@ -26,28 +26,28 @@ end
 
 describe TableOfContents::Heading, '#==' do
   it 'is true if the element_name, text and attributes match' do
-    a = described_class.new(element_name: 'h1', text: 'Cars', attributes: {'id' => 'cars'})
-    b = described_class.new(element_name: 'h1', text: 'Cars', attributes: {'id' => 'cars'})
+    a = described_class.new(element_name: 'h1', text: 'Cars', attributes: { 'id' => 'cars' })
+    b = described_class.new(element_name: 'h1', text: 'Cars', attributes: { 'id' => 'cars' })
 
     expect(a).to eq(b)
   end
 
   it 'is false if the element_name differs' do
-    a = described_class.new(element_name: 'h1', text: 'Cars', attributes: {'id' => 'cars'})
-    b = described_class.new(element_name: 'h2', text: 'Cars', attributes: {'id' => 'cars'})
+    a = described_class.new(element_name: 'h1', text: 'Cars', attributes: { 'id' => 'cars' })
+    b = described_class.new(element_name: 'h2', text: 'Cars', attributes: { 'id' => 'cars' })
 
     expect(a).to_not eq(b)
   end
 
   it 'is false if the text differs' do
-    a = described_class.new(element_name: 'h1', text: 'Cars', attributes: {'id' => 'cars'})
-    b = described_class.new(element_name: 'h1', text: 'Boats', attributes: {'id' => 'cars'})
+    a = described_class.new(element_name: 'h1', text: 'Cars', attributes: { 'id' => 'cars' })
+    b = described_class.new(element_name: 'h1', text: 'Boats', attributes: { 'id' => 'cars' })
 
     expect(a).to_not eq(b)
   end
 
   it 'is false if the attributes differ' do
-    a = described_class.new(element_name: 'h1', text: 'Cars', attributes: {'id' => 'cars'})
+    a = described_class.new(element_name: 'h1', text: 'Cars', attributes: { 'id' => 'cars' })
     b = described_class.new(element_name: 'h1', text: 'Cars', attributes: {})
 
     expect(a).to_not eq(b)
