@@ -19,9 +19,7 @@ module TableOfContents
     def ==(other)
       heading == other.heading &&
         children.length == other.children.length &&
-        children.map.with_index do |child, index|
-          child == other.children[index]
-        end.all?
+        children.map.with_index { |child, index| child == other.children[index] }.all?
     end
   end
 end
